@@ -16,10 +16,10 @@ export default function Sports() {
       <h2>Sports</h2>
       <ul>{links}</ul>
           <Route path={`${path}/:id`}
-            render={(props) => {
-              const sport = sportsData.find(sport => sport.id === Number(props.match.params.id))
+            render={({match}) => {
+              const sport = sportsData.find(sport => sport.id === Number(match.params.id))
               return (
-                <Sport {...props} sport={sport} />
+                <Sport sport={sport} />
               )
             }}
           />
